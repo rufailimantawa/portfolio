@@ -1,0 +1,54 @@
+---
+import { SITE } from "@consts";
+---
+
+<div class="profile-card">
+	<div class="profile-banner">
+		<img src="/profile-banner.png" alt="">
+	</div>
+	<div class="profile-picture">
+		<img src={"/profile-picture.png"} />
+	</div>
+	<h2 class="profile-name">{SITE.Name}</h2>
+	<div class="profile-bio">{SITE.Bio}</div>
+	<div class="profile-badges mt-6 flex flex-wrap gap-3">
+		<!-- Computer Scientist badge -->
+		<!-- <span class="inline-flex items-center px-1 gap-2 rounded-lg bg-gray-100 border border-gray-200 text-sm font-medium">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+			</svg>
+			Computer Scientist
+		</span> -->
+
+		<!-- Birthday badge -->
+		<!-- <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200 text-sm font-medium">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.041.165-1.5.479a2.25 2.25 0 01-3 0 2.25 2.25 0 00-3 0 2.25 2.25 0 01-3 0 2.25 2.25 0 00-3 0 2.25 2.25 0 01-3 0c-.459-.314-.977-.479-1.5-.479V5.25A2.25 2.25 0 014.5 3h15A2.25 2.25 0 0121.75 5.25v10.296zM6 18.75a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H6.75a.75.75 0 01-.75-.75z" />
+			</svg>
+			Birthday: Jan 10
+		</span> -->
+
+		<!-- GitHub badge -->
+		<!-- <a href="https://github.com/rufailimantawa" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.834 2.809 1.304 3.495.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+			@rufailimantawa
+		</a> -->
+
+		<!-- X badge -->
+		<!-- <a href="https://x.com/rufailimantawa" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+			</svg>
+			@rufailimantawa
+		</a> -->
+
+		<!-- Location badge -->
+		<!-- <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-sm font-medium">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+			</svg>
+			Zamfara, NG
+		</span> -->
+	</div>
+</div>

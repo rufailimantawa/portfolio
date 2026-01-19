@@ -1,0 +1,15 @@
+---
+import Container from "./Container.astro";
+import Link from "./Link.astro"
+import { SITE } from "@consts"
+---
+
+<header class="border-b border-gray-200">
+	<Container>
+		<div class="flex flex-wrap justify-between">
+			<Link href="/" underlined={false}>
+				<span class="font-semibold">{SITE.Name}</span>
+			</Link>
+		</div>
+	</Container>
+</header>

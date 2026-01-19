@@ -1,16 +1,15 @@
 ---
-
+import Container from "@components/Container.astro";
+import Guttered from "@components/Guttered.astro";
+import ProfileCard from "@components/ProfileCard.astro";
+import { HOME } from "@consts";
+import PageLayout from "@layout/PageLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<PageLayout title={HOME.Title} descr={HOME.Descr}>
+	<Container>
+		<Guttered>
+			<ProfileCard />
+		</Guttered>
+	</Container>
+</PageLayout>
