@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+html {
+	overflow-y: scroll;
+	color-scheme: light;
+}
+
+html.dark {
+	color-scheme: dark;
+}
+
+body {
+	@apply size-full;
+	@apply bg-gray-100 dark:bg-gray-900;
+	@apply text-black/50 dark:text-white/75;
+}
+
 header {
 	@apply flex items-center fixed top-0 right-0 left-0 py-4 h-16;
 	@apply backdrop-blur-sm;
