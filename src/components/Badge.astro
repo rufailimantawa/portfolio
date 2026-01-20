@@ -1,0 +1,51 @@
+---
+interface Props {
+	title: string;
+	icon?: string;
+	href?: string;
+	variant?: "primary" | "secondary" | "outline" | "ghost";
+	size?: "sm" | "md" | "lg"
+}
+
+const {
+	title,
+	icon = "",
+	href,
+	variant = "primary",
+	size = "md"
+} = Astro.props
+
+const variants = {
+	primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+	secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+  outline:   'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+  ghost:     'hover:bg-accent hover:text-accent-foreground'
+};
+
+const sizes = {
+  sm: 'px-2.5 py-0.5 text-xs',
+  md: 'px-3 py-1 text-sm',
+  lg: 'px-4 py-1.5 text-base'
+};
+
+const classes = [
+  'inline-flex items-center gap-1.5 rounded-full font-medium transition-colors',
+  sizes[size],
+  variants[variant],
+  href ? 'cursor-pointer' : ''
+].filter(Boolean).join(' ');
+---
+
+{
+	href ? (
+		<a href={href} class={classes} target="_blank" rel="noopener noreferrer">
+      {icon && <span class="text-base">{icon}</span>}
+      <span>{title}</span>
+    </a>
+	) : (
+		<span class={classes}>
+      {icon && <span class="text-base">{icon}</span>}
+      <span>{title}</span>
+    </span>
+	)
+}

@@ -1,0 +1,31 @@
+---
+interface Props {
+	align?: "right" | "center" | "left"
+	gap?: string;
+	class?: string;
+	wrap?: boolean;
+}
+
+const {
+	align = "left",
+	gap = "gap-2.5",
+	class: extraClass = '',
+	wrap = true,
+} = Astro.props
+
+const alignment = {
+	left: "justify-start",
+	center: 'justify-center',
+	right: "justify-end"
+}[align] ?? 'justify-start'
+---
+
+<div class:list={[
+	'flex items-center',
+	gap,
+	alignment,
+	wrap ? 'flex-wrap' : 'flex-nowrap',
+	extraClass,
+]}>
+	<slot />
+</div>
