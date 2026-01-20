@@ -1,0 +1,49 @@
+<script is:inline>
+	function init() {
+			preloadThemeMode()
+
+			const darkModeBtn = document.getElementById("dark-theme-mode");
+			const lightModeBtn = document.getElementById("light-theme-mode");
+			const systemModeBtn = document.getElementById("system-theme-mode");
+
+			darkModeBtn?.addEventListener("click", () => {
+					localStorage.setItem("themeMode", "dark");
+					toggleThemeMode(true);
+			});
+			lightModeBtn?.addEventListener("click", () => {
+				localStorage.setItem("themeMode", "light");
+				toggleThemeMode(false);
+			});
+			systemModeBtn?.addEventListener("click", () => {
+				localStorage.setItem("themeMode", "system");
+				toggleThemeMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+			});
+
+			window.matchMedia("(prefers-color-scheme: dark)")
+				.addEventListener("change", event => {
+					if (localStorage.themeMode === "system" || !localStorage.themeMode) {
+						toggleThemeMode(event.matches);
+					}
+				})
+		}
+		function toggleThemeMode(isDark) {
+			if (isDark) {
+				document.documentElement.classList.add("dark");
+			} else {
+				document.documentElement.classList.remove("dark");
+			}
+		}
+		function preloadThemeMode() {
+			const mode = localStorage.themeMode;
+
+			if (mode === "light" || mode === "dark") {
+				toggleThemeMode(mode === "dark")
+			} else {
+				toggleThemeMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", () => init());
+		document.addEventListener("astro:after-swap", () => init());
+		preloadThemeMode();
+</script>

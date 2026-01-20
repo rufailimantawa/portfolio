@@ -1,23 +1,20 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
 	overflow-y: scroll;
-	color-scheme: light;
-}
-
-html.dark {
-	color-scheme: dark;
 }
 
 body {
 	@apply size-full;
 	@apply bg-gray-100 dark:bg-gray-900;
-	@apply text-black/50 dark:text-white/75;
+	@apply text-gray-900 dark:text-gray-100;
 }
 
 header {
 	@apply flex items-center fixed top-0 right-0 left-0 py-4 h-16;
-	@apply backdrop-blur-sm;
+	@apply z-65536 backdrop-blur-sm;
 
 	&>* {
 		@apply flex-1;
@@ -28,7 +25,12 @@ main {
 	@apply py-16;
 }
 
+footer #footer {
+	@apply py-6 text-sm;
+}
+
 div.profile-card {
+	@apply border-b border-gray-200 dark:border-gray-800;
 	@apply px-4 -mx-4;
 	& .profile-banner {
 		@apply bg-gray-400 h-48 -mx-4;
@@ -37,8 +39,8 @@ div.profile-card {
 		}
 	}
 	& .profile-picture {
-		@apply bg-gray-200 w-32 aspect-square -mt-18;
-		@apply rounded-lg p-0.5;
+		@apply w-32 aspect-square -mt-18;
+		@apply rounded-lg;
 		& img {
 			border-radius: inherit;
 		}
@@ -47,6 +49,6 @@ div.profile-card {
 		@apply text-2xl font-semibold pt-4;
 	}
 	& .profile-bio {
-		@apply text-sm text-gray-800;
+		@apply text-sm text-gray-800 dark:text-gray-200;
 	}
 }
