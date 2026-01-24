@@ -30,7 +30,7 @@ footer #footer {
 }
 
 div.profile-card {
-	@apply border-b border-gray-200 dark:border-gray-800;
+	@apply border-b border-gray-300 dark:border-gray-800;
 	@apply px-4 -mx-4;
 	& .profile-banner {
 		@apply bg-gray-400 h-48 -mx-4;
